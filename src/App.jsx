@@ -25,9 +25,7 @@ const App = () => {
     try {
       const fetchInfo = async () => {
         const res = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${
-            import.meta.env.VITE_WEATHER_API_KEY
-          }&q=Nepal&days=1&aqi=no&alerts=no`
+          `http://api.weatherapi.com/v1/forecast.json?key=5a237df58f2b4e94a08164438252505&q=Nepal&days=1&aqi=no&alerts=no`
         );
         console.log(res.data.forecast);
         setWeatherInfo(res.data);
@@ -41,9 +39,7 @@ const App = () => {
   const searchingElements = async (e) => {
     try {
       const response = await axios.get(
-        `http://api.weatherapi.com/v1/search.json?key=${
-          import.meta.env.VITE_WEATHER_API_KEY
-        }&q=${e}`
+        `http://api.weatherapi.com/v1/search.json?key=5a237df58f2b4e94a08164438252505&q=${e}`
       );
       setSimilarResults(response.data);
     } catch (err) {
@@ -55,9 +51,7 @@ const App = () => {
     try {
       const city = cityElement.current.value;
       const response = await axios.get(
-        `http://api.weatherapi.com/v1/forecast.json?key=${
-          import.meta.env.VITE_WEATHER_API_KEY
-        }&q=${city}&days=1&aqi=no&alerts=no`
+        `http://api.weatherapi.com/v1/forecast.json?key=5a237df58f2b4e94a08164438252505&q=${city}&days=1&aqi=no&alerts=no`
       );
       console.log(response.data);
       setWeatherInfo(response.data);
