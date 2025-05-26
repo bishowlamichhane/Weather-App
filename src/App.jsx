@@ -176,11 +176,11 @@ const App = () => {
             <div className="flex flex-col lg:flex-row gap-6 animate-fadeInSection">
               {/* Main Weather Card */}
               <div className="lg:w-1/3">
-                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-xl overflow-hidden animate-fadeInCard">
+                <div className="bg-white/50 backdrop-blur rounded-2xl shadow-xl overflow-hidden animate-fadeInCard">
                   <div className="p-8 relative">
                     {/* Animated sun/cloud in card */}
                     <WiDaySunny
-                      className="absolute top-2 right-4 text-yellow-200 opacity-40 animate-spin-slow"
+                      className="absolute top-2 right-4 text-yellow-200 opacity-90 animate-spin-slow"
                       size={60}
                     />
                     <div className="flex flex-col items-center text-center">
@@ -217,16 +217,16 @@ const App = () => {
                 </div>
 
                 {/* Weather Stats */}
-                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-xl overflow-hidden mt-6 animate-fadeInCard">
-                  <div className="p-6 grid grid-cols-2 gap-4">
-                    <div className="flex flex-col items-center p-4 rounded-xl bg-blue-50">
+                <div className="bg-white/40 backdrop-blur rounded-2xl shadow-xl overflow-hidden mt-6 animate-fadeInCard">
+                  <div className="p-6 grid grid-cols-2 gap-4 ">
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-blue-100">
                       <WiHumidity className="text-4xl text-blue-600 mb-2 animate-bounce" />
                       <p className="text-sm text-gray-600">Humidity</p>
                       <p className="text-xl font-semibold text-gray-800">
                         {weatherInfo.current.humidity}%
                       </p>
                     </div>
-                    <div className="flex flex-col items-center p-4 rounded-xl bg-gray-50">
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-gray-100">
                       <WiCloudy className="text-4xl text-gray-600 mb-2 animate-cloud-move" />
                       <p className="text-sm text-gray-600">Cloud Cover</p>
                       <p className="text-xl font-semibold text-gray-800">
@@ -240,7 +240,7 @@ const App = () => {
                         {Math.round(weatherInfo.current.feelslike_c)}°C
                       </p>
                     </div>
-                    <div className="flex flex-col items-center p-4 rounded-xl bg-purple-50">
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-purple-100">
                       <WiHumidity className="text-4xl text-purple-600 mb-2 animate-bounce" />
                       <p className="text-sm text-gray-600">Rain Chance</p>
                       <p className="text-xl font-semibold text-gray-800">
@@ -253,7 +253,7 @@ const App = () => {
 
               {/* Hourly Forecast */}
               <div className="lg:w-2/3">
-                <div className="bg-white/80 backdrop-blur rounded-3xl shadow-2xl p-8 relative">
+                <div className="bg-white/20 backdrop-blur rounded-3xl shadow-2xl p-8 relative">
                   <div className="flex items-center mb-6">
                     <h3 className="text-3xl font-extrabold text-gray-900 tracking-tight mr-4">
                       Today's Forecast
@@ -265,7 +265,7 @@ const App = () => {
                   weatherForecast.forecastday[0].hour &&
                   weatherForecast.forecastday[0].hour.length > 0 ? (
                     <div className="overflow-x-auto max-h-[70vh]">
-                      <table className="min-w-full text-left text-gray-700 rounded-2xl overflow-hidden shadow-xl animate-fadeInTable bg-white/60 backdrop-blur border border-emerald-100">
+                      <table className="min-w-full text-left text-gray-700 rounded-2xl overflow-hidden shadow-xl animate-fadeInTable bg-white/20 backdrop-blur border border-emerald-100">
                         <thead className="sticky top-0 bg-white/80 z-10">
                           <tr>
                             <th className="py-3 px-6 font-bold text-lg">
