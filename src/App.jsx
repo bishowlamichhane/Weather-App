@@ -14,6 +14,36 @@ import { BsClock } from "react-icons/bs";
 
 import "./App.css";
 
+// Custom scrollbar styles
+const scrollbarStyles = `
+  /* For Webkit browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #38bdf8, #0284c7);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #0ea5e9, #0369a1);
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #38bdf8 rgba(255, 255, 255, 0.1);
+  }
+`;
+
 const LoadingAnimation = () => (
   <div className="flex flex-col items-center justify-center min-h-[400px]">
     <div className="relative w-24 h-24">
@@ -93,6 +123,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 via-emerald-300 to-blue-600 p-8 relative overflow-hidden">
+      <style>{scrollbarStyles}</style>
       {/* Animated Weather Background Icons */}
       <WiDaySunny
         className="absolute top-[-60px] left-[-60px] text-yellow-300 opacity-30 animate-spin-slow z-0"
