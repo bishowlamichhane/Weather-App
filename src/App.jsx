@@ -11,7 +11,7 @@ import {
   WiStars,
 } from "react-icons/wi";
 import { BsClock } from "react-icons/bs";
-
+import { motion } from "framer-motion";
 import "./App.css";
 
 // Custom scrollbar styles
@@ -63,6 +63,7 @@ const App = () => {
   const [similarResults, setSimilarResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const CARDS_TO_SHOW = 5;
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     try {
@@ -120,9 +121,18 @@ const App = () => {
   const clickedEnter = (e) => {
     if (e.key === "Enter") showWeather(e);
   };
+  useEffect(() => {
+    // Set isVisible to true when component mounts
+    setIsVisible(true);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-emerald-300 to-blue-600 p-8 relative overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      transition={{ duration: 1.0 }}
+      className="min-h-screen bg-gradient-to-br from-sky-400 via-emerald-300 to-blue-600 p-8 relative overflow-hidden"
+    >
       <style>{scrollbarStyles}</style>
       {/* Animated Weather Background Icons */}
       <WiDaySunny
@@ -420,7 +430,7 @@ const App = () => {
           )
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
